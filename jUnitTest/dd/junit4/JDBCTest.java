@@ -16,7 +16,7 @@ public class JDBCTest {
 	public void test() throws Exception {
 		String sql = "select *from student";
 		
-		List<Map<String, Object>> resultSet = JDBCUtils.QueryBySQL(sql);
+		List<Map<String, Object>> resultSet = JDBCUtils.QueryBySQL(sql,null);
 		System.out.println("数据库中学生姓名依次为:");
 		for (Map<String, Object> map : resultSet) {
 			System.out.println(map.get("name"));

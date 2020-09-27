@@ -42,11 +42,16 @@ public class JDBCUtils {
 	public static Connection getConnection() throws SQLException {
 		return (Connection) DriverManager.getConnection(url,username,password);
 	}
-	public static List<Map<String,Object>> QueryBySQL(String sql) throws Exception {
+	public static List<Map<String,Object>> QueryBySQL(String sql,Object[] params) throws Exception {
 		//获取数据链接
 		Connection connection = getConnection();
 		//得到预编译SQL 的 statement
 		PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+		if (!EmptyUtils.arrayIsEmpty(params)){
+            for(int i=0;i<params.length;i++){
+            	preparedStatement.setObject(i+1, params[i]);
+            }
+        }
 		//获得结果集
 		ResultSet qResultSet = preparedStatement.executeQuery();
 		//遍历结果集
