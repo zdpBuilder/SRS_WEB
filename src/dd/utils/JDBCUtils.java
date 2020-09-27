@@ -15,7 +15,7 @@ import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSetMetaData;
 import com.mysql.jdbc.Statement;
 
-public class JDBC {
+public class JDBCUtils {
 
 	private static String driver = null;
 	private static String url = null;
