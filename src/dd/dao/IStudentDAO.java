@@ -4,13 +4,13 @@ import java.util.List;
 
 import dd.domain.Student;
 
-/**
+/***
  * 
- * @ClassName:  StudentDAO   
+ * @ClassName:  IStudentDAO   
  * @Description:This interface is used to operate Student   
- * @author: zdpBuilder
- * @date:   2020年9月27日 下午7:10:21      
- * @Copyright:
+ * @author: 张戴鹏(zdpBuilder)
+ * @date:   2020年9月28日 下午2:28:26      
+ * @Copyright:  张戴鹏(zdpBuilder)
  */
 public interface IStudentDAO {
 

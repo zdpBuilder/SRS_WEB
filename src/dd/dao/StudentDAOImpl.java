@@ -8,13 +8,13 @@ import dd.domain.Student;
 import dd.utils.EmptyUtils;
 import dd.utils.JDBCUtils;
 
-/***
+/**
  * 
  * @ClassName:  StudentDAOImpl   
- * @Description: This service is for implements StudentDAO  
- * @author: zdpBuilder
- * @date:   2020年9月27日 下午7:12:16      
- * @Copyright:
+ * @Description:This service is for implements StudentDAO    
+ * @author: 张戴鹏(zdpBuilder)
+ * @date:   2020年9月28日 下午2:28:37      
+ * @Copyright:  张戴鹏(zdpBuilder)
  */
 public class StudentDAOImpl implements IStudentDAO {
 
