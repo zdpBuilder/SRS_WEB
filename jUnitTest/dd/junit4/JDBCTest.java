@@ -1,8 +1,5 @@
 package dd.junit4;
 
-import static org.junit.Assert.*;
-
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 

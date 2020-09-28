@@ -85,6 +85,16 @@ public class JDBCUtils {
 			}
 		}
 	}
+	/**
+	 * 
+	 * @Title: convertList   
+	 * @Description: ResultSet 结果集遍历  
+	 * @param: @param rs
+	 * @param: @return
+	 * @param: @throws SQLException      
+	 * @return: List<Map<String,Object>>      
+	 * @throws
+	 */
 	private static List<Map<String,Object>> convertList(ResultSet rs) throws SQLException{
 		List<Map<String,Object>> list = new ArrayList<>();
 		ResultSetMetaData md = (ResultSetMetaData) rs.getMetaData();//获取键名
