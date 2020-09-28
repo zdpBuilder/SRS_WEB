@@ -15,7 +15,8 @@ public class DaoImplTest {
 	@Test
 	public void testStudentGetAll() {
 		 
-		 List<Student>students = studentDAO.getAll();
+		 @SuppressWarnings("unchecked")
+		List<Student>students = (List<Student>)studentDAO.getListExample(new Student(),"select * from student", null);
 		 if(EmptyUtils.objectIsEmpty(students)) {
 			 System.out.println("暂无学生信息");
 			 return;

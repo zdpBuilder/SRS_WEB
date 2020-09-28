@@ -1,7 +1,6 @@
 package dd.dao;
 
-import java.util.List;
-
+import dd.base.dao.IBaseDAO;
 import dd.domain.Student;
 
 /***
@@ -12,17 +11,7 @@ import dd.domain.Student;
  * @date:   2020年9月28日 下午2:28:26      
  * @Copyright:  张戴鹏(zdpBuilder)
  */
-public interface IStudentDAO {
-
-	/**
-	 * 
-	 * @Title: getAll   
-	 * @Description: Query All Student   
-	 * @param: @return      
-	 * @return: List<Student>      
-	 * @throws
-	 */
-	List<Student> getAll();
+public interface IStudentDAO extends IBaseDAO<Student> {
 	
 	/**
 	 * 
