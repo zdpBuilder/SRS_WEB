@@ -26,7 +26,7 @@ public class JDBCUtils {
 		try {
 			//读取db.properties
 			Properties properties = new Properties();
-			properties.load(new FileReader("config/db.properties"));
+			properties.load(JDBCUtils.class.getClassLoader().getResourceAsStream("db.properties"));
 			//获取数据库类型
 			driver = properties.getProperty("driver");
 			url = properties.getProperty("url");

@@ -1,5 +1,7 @@
 package dd.dao;
 
+import java.util.List;
+
 import dd.base.dao.IBaseDAO;
 import dd.domain.Student;
 
@@ -23,4 +25,14 @@ public interface IStudentDAO extends IBaseDAO<Student> {
 	 * @throws
 	 */
 	Student getByName(String name);
+	/***
+	 * 
+	 * @Title: list   
+	 * @Description: query Student and get Entity List  
+	 * @param: @param student
+	 * @param: @return      
+	 * @return: List<Student>      
+	 * @throws
+	 */
+	List<Student> list();
 }

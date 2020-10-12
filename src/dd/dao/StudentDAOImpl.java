@@ -25,4 +25,10 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements IStudentDAO 
 		return EmptyUtils.listIsEmpty(students)?null:students.get(0);
 	}
 
+	@Override
+	public List<Student> list() {
+		return (List<Student>)this.getListExample(new Student(),"select * from student",null);	
+	
+	}
+
 }
