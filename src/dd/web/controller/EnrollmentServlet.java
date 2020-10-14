@@ -34,8 +34,12 @@ public class EnrollmentServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		 String studentId = request.getParameter("studentId");
+		 String classId = request.getParameter("classId");
+		 System.out.println(studentId+classId);
+		 //处理选课
+		 //request.setAttribute("student", student);
+		 //request.getRequestDispatcher("/jsp/srs.jsp").forward(request, response);
 	}
 
 }

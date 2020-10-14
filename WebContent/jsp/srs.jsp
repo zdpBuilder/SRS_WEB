@@ -1,19 +1,15 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@ include file="common/header.jsp" %>
+<%@ include file="common/common.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>学生选课系统</title>
 </head>
-<body >
+<body>
 
-<fieldset  class="layui-elem-field layui-field-title" style="margin-top: 20px;text-align:center">
-  <legend>学生选课系统</legend>
-</fieldset>   
+<jsp:include page="common/header.jsp" flush="true" ></jsp:include>
  
 <div style="padding: 20px; background-color: #F2F2F2;">
   <div class="layui-row layui-col-space15">
@@ -45,7 +41,7 @@
       <td>${student.name} </td>
       <td>${student.major}</td>
       <td>${student.degree}</td>
-      <td> <button type="button" class="layui-btn layui-btn-normal">选课</button></td>
+      <td> <a href="${pageContext.request.contextPath }/AddServlet?studentName=${student.name}" class="layui-btn layui-btn-normal">选课</a></td>
     </tr>
      </c:forEach>
   </tbody>
