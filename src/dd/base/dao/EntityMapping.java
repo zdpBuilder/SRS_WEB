@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import dd.domain.Student;
+import dd.domain.StudentCourse;
 import dd.utils.EmptyUtils;
 
 /***
@@ -34,5 +35,23 @@ public class EntityMapping {
 			System.out.println(e.getMessage());
 		}
 		return students;
+	}
+	public static List<StudentCourse> StudentCourseMapping(List<Map<String,Object>> resultSet){
+		List<StudentCourse> studentCourses = new ArrayList<>();
+		try {
+			 if(EmptyUtils.listIsEmpty(resultSet))
+				 return null;
+			 for (Map<String, Object> map : resultSet) {
+				String studentId = (String) map.get("student_id");
+				String courseId = (String) map.get("course_id");
+				StudentCourse studentCourse = new StudentCourse();
+				studentCourse.setStudentId(studentId);
+				studentCourse.setCourseId(courseId);
+				studentCourses.add(studentCourse);
+			 }
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return studentCourses;
 	}
 }

@@ -1,6 +1,6 @@
 package dd.utils;
 
-import java.io.FileReader;
+ 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,6 +60,25 @@ public class JDBCUtils {
 		release(connection, preparedStatement, qResultSet);
 		return list;
 	}
+	/***
+	 * 
+	 * @Title: saveBySQL   
+	 * @Description: Insert&Update Entity   
+	 * @param: @param sql
+	 * @param: @return
+	 * @param: @throws Exception      
+	 * @return: Integer      
+	 * @throws
+	 */
+	public static Integer saveBySQL(String sql) throws Exception{
+		//获取数据链接
+		Connection connection;
+		connection = getConnection();
+		//得到预编译SQL 的 statement
+		PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+		return preparedStatement.executeUpdate(sql);		
+	}
+	
 	public static void release(Connection connection,Statement statement,ResultSet resultSet) {
 		if(statement != null) {
 			try {

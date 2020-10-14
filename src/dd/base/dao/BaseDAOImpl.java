@@ -3,6 +3,7 @@ package dd.base.dao;
 import java.util.List;
 import java.util.Map;
 import dd.domain.Student;
+import dd.domain.StudentCourse;
 import dd.utils.JDBCUtils;
 
 /***
@@ -25,18 +26,26 @@ public class BaseDAOImpl<T> implements IBaseDAO<T>{
 			resultSet = JDBCUtils.QueryBySQL(sql,params);
 			if(entity instanceof Student)
 				return  EntityMapping.studentMapping(resultSet);
+			if(entity instanceof StudentCourse)
+				return  EntityMapping.StudentCourseMapping(resultSet);
 			else
 				return null;
 		} catch (Exception e) {
-			 System.out.println("数据库查询异常-->"+e.getMessage());
+			 System.out.println("数据库查询数据 异常-->"+e.getMessage());
 			 return null;
 		}	
 	}
 
 	@Override
-	public int insert(T entity,String sql, Object[] params) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int save(String sql) {
+		
+		try {
+			return JDBCUtils.saveBySQL(sql);
+		} catch (Exception e) {
+			System.out.println("数据库更新数据异常-->"+e.getMessage());
+			e.printStackTrace();
+			return 0;
+		}
 	}
 	 
 }

@@ -13,7 +13,7 @@
       	<a  href="${pageContext.request.contextPath }/SrsServlet" class="layui-btn layui-btn-normal layui-btn-lg layui-btn-radius">
        		<i class="layui-icon layui-icon-release"></i>&nbsp;&nbsp;进行初始化
        	</a>
-       	<a type="button" class="layui-btn  layui-btn-danger layui-btn-lg layui-btn-radius">
+       	<a  href="${pageContext.request.contextPath }/ListServlet" class="layui-btn  layui-btn-danger layui-btn-lg layui-btn-radius">
        		<i class="layui-icon layui-icon-read"></i>&nbsp;&nbsp;查看当前状态
        	</a>
       </div>

@@ -14,13 +14,14 @@
       <div class="layui-card">
         <div class="layui-card-header">进行选课</div>
         <div class="layui-card-body">
-        <form class="layui-form" action="${pageContext.request.contextPath }/EnrollmentServlet" method="POST" >
+        <form class="layui-form"  method="POST"  action="${pageContext.request.contextPath }/EnrollmentServlet" >
 		  <div class="layui-row layui-col-space15"> 
 			  <div class="layui-col-md6">
 				  <div class="layui-form-item">
 				    <label class="layui-form-label">学号ID</label>
 				    <div class="layui-input-block">
-				      <input type="text"  disabled name="studentId"  value="${student.ID}" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+				      <input  disabled name="studentId"  value="${student.ID}"  class="layui-input" style="border:none">
+				   	  <input  style="display:none" name="studentId"  value="${student.ID}"  class="layui-input">
 				    </div>
 				  </div>
 			  </div>
@@ -34,7 +35,7 @@
 			  </div>	  
 		</div>
 		  <div class="layui-form-item">
-		    <div class="layui-input-block" style="display:flex;align-items:center;justify-content:center;">
+		    <div class="layui-input-block" style="display:flex;align-items:center;justify-content:center;" >
 		     
 		      <button type="submit" class="layui-btn" >提交</button>   
 		    </div>

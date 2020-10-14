@@ -26,12 +26,12 @@ public interface IBaseDAO<T> {
 	
 	/***
 	 * 
-	 * @Title: insert   
-	 * @Description: insert T   
+	 * @Title: save   
+	 * @Description: save T and update T By SQL
 	 * @param: @param entity
 	 * @param: @return      
 	 * @return: List<T>      
 	 * @throws
 	 */
-	int insert(T entity,String sql, Object[] params);
+	int save(String sql);
 }

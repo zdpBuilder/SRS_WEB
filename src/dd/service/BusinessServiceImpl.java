@@ -1,6 +1,9 @@
 package dd.service;
 
+import dd.dao.IStudentCourseDAO;
+import dd.dao.StudentCourseDAOImpl;
 import dd.domain.EnrollmentStatus;
+import dd.domain.StudentCourse;
 
 /***
  * 
@@ -10,11 +13,13 @@ import dd.domain.EnrollmentStatus;
  * @date:   2020年9月27日 下午3:07:16      
  * @Copyright:
  */
-public class BusinessServiceImpl implements BusinessService{
+public class BusinessServiceImpl implements IBusinessService{
 
 	@Override
-	public EnrollmentStatus enroll(String id, String calssId) {
-		// TODO Auto-generated method stub
-		return null;
+	public int enroll(StudentCourse studentCourse) {
+		
+		IStudentCourseDAO studentCourseDAO = new StudentCourseDAOImpl();
+		
+		return studentCourseDAO.insert(studentCourse);
 	}
 }

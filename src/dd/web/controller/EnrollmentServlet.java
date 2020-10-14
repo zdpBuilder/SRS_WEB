@@ -7,13 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import dd.domain.StudentCourse;
+import dd.service.BusinessServiceImpl;
+import dd.service.IBusinessService;
+
 /**
  * Servlet implementation class EnrollmentServlet
  */
-@WebServlet(asyncSupported = true, urlPatterns = { "/EnrollmentServlet" })
+@WebServlet("/EnrollmentServlet")
 public class EnrollmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,20 +30,27 @@ public class EnrollmentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		 
+		
+		String studentId = request.getParameter("studentId");
+		String classId = request.getParameter("classId");
+		StudentCourse studentCourse = new StudentCourse();
+		studentCourse.setCourseId(classId);
+		studentCourse.setStudentId(studentId);
+		IBusinessService businessService = new BusinessServiceImpl();
+		int result = businessService.enroll(studentCourse);
+		request.setAttribute("status", result);
+		//处理选课
+		//request.setAttribute("student", student);
+		request.getRequestDispatcher("/jsp/message.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String studentId = request.getParameter("studentId");
-		 String classId = request.getParameter("classId");
-		 System.out.println(studentId+classId);
-		 //处理选课
-		 //request.setAttribute("student", student);
-		 //request.getRequestDispatcher("/jsp/srs.jsp").forward(request, response);
+		 
+		 doGet(request, response);
 	}
 
 }
