@@ -1,4 +1,4 @@
-package dd.junit4;
+package cn.zdp.junit4;
 
 import java.util.List;
 
