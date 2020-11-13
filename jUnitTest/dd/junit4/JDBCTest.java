@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import dd.utils.JDBCUtils;
+import cn.zdp.utils.JDBCUtils;
 
 public class JDBCTest {
 

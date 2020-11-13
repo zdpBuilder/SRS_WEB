@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import dd.dao.IStudentDAO;
-import dd.dao.StudentDAOImpl;
-import dd.domain.Student;
-import dd.utils.EmptyUtils;
+import cn.zdp.dao.IStudentDAO;
+import cn.zdp.dao.StudentDAOImpl;
+import cn.zdp.domain.Student;
+import cn.zdp.utils.EmptyUtils;
 
 public class DaoImplTest {
 
